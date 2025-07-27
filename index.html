@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="/scriptsIndex.js"></script>
+  <link rel="icon" type="image/png" href="Imgs/logo-2-square.png">
+  <title>Prograñando - Presentación</title>
+  <style>
+    /* Solo esta parte se agregó para el botón toggle */
+    .toggleable {
+      display: none;
+    }
+    .toggleable.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="/logo.png" alt="logo LA" class="logo" />
+        <h1 class="titulo">Prograñando</h1>
+      </div>
+
+      <!-- Botón Hamburguesa -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Enlaces de navegación -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="mistrabajos.html">Mis Trabajos</a></li>
+        <li><a href="contacto.html">Contactame!</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="presentacion">
+    <section class="perfil">
+      <img src="/progranando.png" alt="Luis Ángel" class="foto"/>
+      <div class="info">
+        <h2>¡Hola! Soy Luis Ángel de Prograñando</h2>
+        <p>
+          Soy un joven apasionado por la programación. Mi objetivo es trabajar<br>
+          para costear mis estudios y seguir creciendo. Domino tecnologías como:<br>
+          <strong>JavaScript, PHP, MySQL, HTML y CSS</strong>. Hasta ahora, puedo desarrollar:
+        </p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="proyectos">
+      <button class="toggle" data-target="faciles">Ver/Ocultar Proyectos</button>
+      <div class="paginas_faciles toggleable" id="faciles">
+        <div class="proyecto">
+          <h3>1. Página de Presentación de Empresa</h3>
+          <ul>
+            <li>✅ Uso real: Negocios en línea.</li>
+            <li>📋 Incluye: Menú móvil, scroll animado, contacto y mapa.</li>
+            <li>⚙️ JS: Animaciones.</li>
+          </ul>
+        </div>
+        <div class="proyecto">
+          <h3>2. Currículum Online o Portafolio</h3>
+          <ul>
+            <li>📄 Ideal para freelancers y creativos.</li>
+            <li>✨ Incluye: Foto, experiencia, habilidades y descarga CV.</li>
+            <li>⚙️ JS: Tema oscuro, botones y animaciones suaves.</li>
+          </ul>
+        </div>
+        <div class="proyecto">
+          <h3>3. Página de Restaurante</h3>
+          <ul>
+            <li>🍔 Negocios sin pedidos online.</li>
+            <li>📋 Incluye: Menú, ubicación y contacto.</li>
+            <li>⚙️ JS: Validaciones y animaciones.</li>
+          </ul>
+        </div>
+        <div class="proyecto">
+          <h3>4. Calculadora de Calorías o IMC</h3>
+          <ul>
+            <li>💪 Para salud y bienestar.</li>
+            <li>🧮 Calcula IMC con feedback visual.</li>
+            <li>⚙️ JS: Cálculo dinámico.</li>
+          </ul>
+        </div>
+        <div class="proyecto">
+          <h3>5. To-Do List</h3>
+          <ul>
+            <li>✅ Organización personal.</li>
+            <li>📋 Añadir y completar tareas.</li>
+            <li>⚙️ JS: Guarda en localStorage.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRAS -->
+    <section class="extras">
+      <h2>Otros aspectos:</h2>
+      <ul>
+        <li>🚀 Sueño con terminar Ingeniería de Software y trabajar con videojuegos, IA y realidad virtual.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Prograñando &copy; 2025. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Menú responsive
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("toggleable");
+      });
+
+      document.querySelectorAll(".toggle").forEach(button => {
+        button.addEventListener("click", () => {
+          const target = document.getElementById(button.dataset.target);
+          target.classList.toggle("active");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

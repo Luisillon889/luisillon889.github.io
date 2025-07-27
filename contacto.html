@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Luis Ángel Chávez</title>
+  <link rel="stylesheet" href="styleContacto.css" />
+  <link rel="icon" type="image/png" href="Imgs/logo-2-square.png" />
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="/logo.png" alt="logo Luis Ángel" class="logo" />
+
+      <!-- Botón Hamburguesa -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Enlaces de navegación -->
+      <ul id="nav-links">
+        <li><a href="mistrabajos.html">Mis Trabajos</a></li>
+        <li><a href="index.html">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form action="https://formsubmit.co/32d5af59bcf5e3ec63150fe6d63c7bcd" method="POST">
+    <label for="i_nombre">Nombre *</label>
+    <input type="text" id="i_nombre" name="nombre" placeholder="Escriba su nombre..." required />
+
+    <label for="i_correo">Correo Electrónico *</label>
+    <input type="email" id="i_correo" name="correo" placeholder="Escriba su correo..." required />
+
+    <label for="asunto">Asunto *</label>
+    <select name="asunto" id="asunto" required>
+      <option>Saludos</option>
+      <option>Pregunta</option>
+      <option>Propuesta</option>
+      <option>Queja/Reclamo</option>
+    </select>
+
+    <label for="mensaje">Mensaje</label>
+    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Especifíque qué quiere..." required></textarea>
+
+    <div class="text-center">
+      <input class="btn" type="submit" value="ENVIAR" />
+    </div>
+  </form>
+
+  <div class="footer">
+    <h1 class="pie_de_pagina">Prograñando &copy; 2025. Todos los derechos reservados.</h1>
+  </div>
+
+  <script>
+    // Toggle menu para móviles
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      toggle.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (opcional)
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        toggle.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
